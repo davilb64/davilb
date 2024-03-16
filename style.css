@@ -1,0 +1,8 @@
+esquerda{
+    display: flex;
+    justify-content: flex-start;
+}
+
+faixa{
+    background-color: aqua;
+}
