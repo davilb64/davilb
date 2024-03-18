@@ -1,8 +1,74 @@
-esquerda{
-    display: flex;
-    justify-content: flex-start;
+*{
+    border: 0px;
+    margin: 0px;
+    font-family: ubuntu;
+    color: white;
 }
 
-faixa{
-    background-color: aqua;
+
+#esquerda{
+    background-color: rgba(0, 0, 0, 0.815);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 960px;
+    height: 711px;
+    box-shadow: 10px 0px 10px black;
+}
+
+#direita{
+    width: 960px;
+    height: 711px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+#centro{
+    display: flex;
+    background-image: url('https://pbs.twimg.com/ext_tw_video_thumb/1561124725610405888/pu/img/nE0bt99DegtQN2bZ.jpg:large') ;
+}
+
+footer{
+    background-color: blue;
+}
+
+#contatos{
+    display: flex;
+    flex-direction: column;
+    font-size: x-large;
+}
+
+#contatos div{
+    display: flex;
+    align-items: center;
+    padding: 15px;
+}
+
+#contatos div p{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+#contatos img{
+    height: 90px;
+    width: 90px;
+}
+
+#redes img{
+    height: 100px;
+    width: 100px;
+    padding: 20px;
+}
+
+#direita img{
+    width: 300px;
+    border-radius: 500px;
+    border-style: dashed;
+    border: 1px neon;
+    border-color: #09772e;
+    box-shadow: 0 0 5px 5px #09772e;
 }
