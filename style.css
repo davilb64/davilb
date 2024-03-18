@@ -11,14 +11,14 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 960px;
-    height: 711px;
+    width: 50%;
+    height: 70%;
     box-shadow: 10px 0px 10px black;
 }
 
 #direita{
-    width: 960px;
-    height: 711px;
+    width: 50%;
+    height: 70%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -32,7 +32,7 @@
 }
 
 footer{
-    background-color: blue;
+    background-color: rgb(27, 27, 27);
 }
 
 #contatos{
@@ -54,14 +54,16 @@ footer{
 }
 
 #contatos img{
-    height: 90px;
-    width: 90px;
+    height: 40px;
+    width: 40px;
+    transition: 0.5s;
 }
 
 #redes img{
-    height: 100px;
-    width: 100px;
+    height: 50px;
+    width: 50px;
     padding: 20px;
+    transition: 0.5s;
 }
 
 #direita img{
@@ -71,4 +73,109 @@ footer{
     border: 1px neon;
     border-color: #09772e;
     box-shadow: 0 0 5px 5px #09772e;
+    margin-top: 100px;
+    transition: 0.5s;
+}
+
+#direita p{
+    margin: 30px;
+    font-size: large;
+    font-weight: bold;
+}
+
+#faixa{
+    margin-top: 30px;
+    background-color: #09772e;
+    width: 60%;
+    transition: 1s;
+}
+
+#faixa h1{
+    padding: 10px;
+}
+
+#faixa h3{
+    padding: 10px;
+}
+
+footer #apresentacao{
+    margin: 20px;
+    padding: 10px;
+    width: 80%;
+    background-color: #09772e;
+    border-end-end-radius: 10px;
+    font-size: large;
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: #000;
+    font-weight: bold;
+    transition: 0.5s;
+}
+
+footer{
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(27, 27, 27);
+
+}
+
+html{
+    background-color: rgb(27, 27, 27);
+}
+
+#blue{
+    color: blue;
+}
+
+#orange{
+    color: orange;
+}
+
+#blue2{
+    color: rgb(47, 144, 255);
+}
+
+#purple{
+    color: purple;
+}
+
+button{
+    margin-bottom: 21px;
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: large;
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: #000;
+    background-color: #09772e;
+    border-end-end-radius: 10px;
+    transition: 0.5s;
+}
+
+/* hover */
+
+
+#contatos img:hover{
+    height: 50px;
+    width: 50px;
+}
+
+#redes img:hover{
+    height: 60px;
+    width: 60px;
+}
+
+#direita img:hover{
+    width: 310px;
+}
+
+footer #apresentacao:hover{
+    padding: 20px;
+}
+
+button:hover{
+    cursor: pointer;
+    padding: 15px;
 }
