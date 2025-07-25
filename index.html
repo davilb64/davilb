@@ -8,6 +8,7 @@
 		<link rel="stylesheet" href="style.css">
 
     <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, maximum-scale=3.0">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
@@ -15,6 +16,17 @@
     </head>
 
     <body>
+        <!-- Loading Screen -->
+        <div class="loading-overlay" id="loadingScreen">
+            <div class="loading-spinner"></div>
+        </div>
+
+        <!-- Particles Background -->
+        <div id="particles"></div>
+
+        <!-- Seta indicativa -->
+        <div class="scroll-arrow" id="scrollArrow"></div>
+
 		<div id="centro">
 			<div id="esquerda">
 				<div id="faixa">
@@ -27,29 +39,29 @@
 				</div>
 				<div id="contatos">
 					<div id="gmail">
-						<a href="mailto:davilopesbrito64@gmail.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/281/281769.png" class="media-object  img-responsive img-thumbnail"></a>
+						<a href="mailto:davilopesbrito64@gmail.com" target="_blank" data-tooltip="Enviar email"><img src="https://cdn-icons-png.flaticon.com/512/281/281769.png" class="media-object  img-responsive img-thumbnail"></a>
 						<p>davilopesbrito64@gmail.com</p>
 					</div>
 
 					<div id="telefone">
-						<a href="tel:61998832006" target="_blank"><img src="https://cdn.icon-icons.com/icons2/317/PNG/512/phone-icon_34382.png" class="media-object  img-responsive img-thumbnail"></a>
+						<a href="tel:61998832006" target="_blank" data-tooltip="Ligar agora"><img src="https://cdn.icon-icons.com/icons2/317/PNG/512/phone-icon_34382.png" class="media-object  img-responsive img-thumbnail"></a>
 						<p>(61) 9 9883-2006</p>
 					</div>
 
 					<div id="mapa">
-						<img src="https://cdn-icons-png.flaticon.com/512/929/929426.png" class="media-object  img-responsive img-thumbnail">
-						<p>Brazlândia, Brasília - DF</p>
+						<img src="https://cdn-icons-png.flaticon.com/512/929/929426.png" class="media-object  img-responsive img-thumbnail" data-tooltip="Localização">
+						<p>Taguatinga, Brasília - DF</p>
 					</div>
 				</div>
 
 				<div id="redes">
-					<a href="https://www.linkedin.com/in/davi-lopes-brito-8b297128a/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/256/174/174857.png" class="media-object  img-responsive img-thumbnail"></a>
-					<a href="https://github.com/davilb64" target="_blank"><img src="https://logodix.com/logo/64439.png" class="media-object  img-responsive img-thumbnail"></a>
+					<a href="https://www.linkedin.com/in/davi-lopes-brito-8b297128a/" target="_blank" data-tooltip="Conectar no LinkedIn"><img src="https://cdn-icons-png.flaticon.com/256/174/174857.png" class="media-object  img-responsive img-thumbnail"></a>
+					<a href="https://github.com/davilb64" target="_blank" data-tooltip="Ver projetos no GitHub"><img src="https://logodix.com/logo/64439.png" class="media-object  img-responsive img-thumbnail"></a>
 				</div>
 		
 			</div>
 			<div id="direita">
-				<a href="https://www.instagram.com/davilb0202/" target="_blank"><img src="./foto.jpg" alt="foto"></a>
+				<a href="https://www.instagram.com/davilb0202/" target="_blank" data-tooltip="Seguir no Instagram"><img src="./foto.jpg" alt="foto"></a>
 				<p id="alan">
 					"As máquinas me surpreendem muito frequentemente." </br>
 					-Alan Turing
@@ -60,13 +72,138 @@
     </body>
 	<footer>
 		<p id="apresentacao">
-			Olá! Me chamo Davi Lopes e recentemente ingressei no mercado de trabalho. Durante minhas experiências profissionais, desenvolvi habilidades como comunicação ativa e trabalho em equipe.
-			Na equipe de F1 in Schools, "Lobo Canindé", no SESI Taguatinga, atuei como engenheiro chefe. Lá, minhas responsabilidades incluíam desenvolver métodos eficazes para os carros, modelagem em 3D, fresagem CNC e impressão 3D. Atualmente, trabalho como Especialista em Suporte de TI.
-			Algumas das minhas principais competências incluem <span id="blue"> Redes de Computadores </span>, <span id="orange">HTML5</span>, <span id="blue2">CSS3</span> e <span id="purple">Lógica de Programação</span>.
+			Olá! Me chamo Davi Lopes! Sou apaixonado por computação e tecnologia desde a infância. Atualmente, sou graduando em Engenharia de Computação na Universidade de Brasília (UnB), onde iniciei minha jornada em outubro de 2024, buscando expandir meus conhecimentos e habilidades na área.
+			Possuo formação técnica em Redes de Computadores e experiências profissionais significativas, incluindo minha atuação como Especialista em Suporte de TI e como engenheiro chefe na equipe de F1 in Schools "Lobo Canindé" do SESI Taguatinga, onde desenvolvi projetos com modelagem 3D, fresagem CNC e impressão 3D.
+			Minhas principais competências incluem <span id="blue">Redes de Computadores</span>, <span id="orange">Linguagem C</span> e <span id="purple">Programação Front-End</span>.
 		</p>
-		<a href="https://docs.google.com/document/d/1vy5LesD0lHoESeig4MR_6QZ81gFuVqOP/edit?usp=sharing&ouid=104543149537685018441&rtpof=true&sd=true" target="_blank">
-			<button>Currículo</button>
+		<a href="Profile.pdf" target="_blank" data-tooltip="Baixar currículo completo">
+			<button>📄 Currículo Completo</button>
 		</a>
 	</footer>
+
+	<script>
+		// Loading Screen
+		window.addEventListener('load', function() {
+			setTimeout(() => {
+				document.getElementById('loadingScreen').style.display = 'none';
+			}, 3000);
+		});
+
+		// Particles Animation
+		function createParticles() {
+			const particlesContainer = document.getElementById('particles');
+			const particleCount = 50;
+
+			for (let i = 0; i < particleCount; i++) {
+				const particle = document.createElement('div');
+				particle.className = 'particle';
+				particle.style.cssText = `
+					position: fixed;
+					width: 2px;
+					height: 2px;
+					background: #09772e;
+					border-radius: 50%;
+					pointer-events: none;
+					opacity: ${Math.random() * 0.5 + 0.2};
+					left: ${Math.random() * 100}vw;
+					top: ${Math.random() * 100}vh;
+					animation: float ${Math.random() * 3 + 2}s ease-in-out infinite;
+					animation-delay: ${Math.random() * 2}s;
+				`;
+				particlesContainer.appendChild(particle);
+			}
+		}
+
+		// Smooth Scroll for anchor links
+		document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+			anchor.addEventListener('click', function (e) {
+				e.preventDefault();
+				document.querySelector(this.getAttribute('href')).scrollIntoView({
+					behavior: 'smooth'
+				});
+			});
+		});
+
+		// Enhanced hover effects with sound (optional)
+		document.querySelectorAll('#contatos img, #redes img').forEach(img => {
+			img.addEventListener('mouseenter', function() {
+				this.style.transform = 'scale(1.2) rotate(5deg)';
+			});
+			
+			img.addEventListener('mouseleave', function() {
+				this.style.transform = 'scale(1) rotate(0deg)';
+			});
+		});
+
+		// Initialize particles on load
+		window.addEventListener('load', createParticles);
+
+		// Intersection Observer for animations
+		const observerOptions = {
+			threshold: 0.1,
+			rootMargin: '0px 0px -50px 0px'
+		};
+
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					entry.target.style.animationPlayState = 'running';
+				}
+			});
+		}, observerOptions);
+
+		// Observe elements for animation
+		document.addEventListener('DOMContentLoaded', () => {
+			const animatedElements = document.querySelectorAll('#esquerda, #direita, #faixa, #contatos, #redes, footer #apresentacao, button');
+			animatedElements.forEach(el => observer.observe(el));
+		});
+
+		// Dynamic typing effect enhancement
+		function typeWriter(element, text, speed = 100) {
+			let i = 0;
+			element.innerHTML = '';
+			function type() {
+				if (i < text.length) {
+					element.innerHTML += text.charAt(i);
+					i++;
+					setTimeout(type, speed);
+				}
+			}
+			type();
+		}
+
+		// Enhanced glowing effect on scroll
+		window.addEventListener('scroll', () => {
+			const scrolled = window.pageYOffset;
+			const foto = document.querySelector('#direita img');
+			const scrollArrow = document.getElementById('scrollArrow');
+			
+			if (foto) {
+				const glowIntensity = Math.min(scrolled / 100, 1);
+				foto.style.boxShadow = `0 0 ${20 + glowIntensity * 20}px ${5 + glowIntensity * 10}px rgba(9, 119, 46, ${0.6 + glowIntensity * 0.4})`;
+			}
+			
+			// Esconder seta quando rolar para baixo
+			if (scrollArrow) {
+				if (scrolled > 100) {
+					scrollArrow.classList.add('hidden');
+				} else {
+					scrollArrow.classList.remove('hidden');
+				}
+			}
+		});
+
+		// Funcionalidade da seta - rolar para o footer
+		document.addEventListener('DOMContentLoaded', () => {
+			const scrollArrow = document.getElementById('scrollArrow');
+			if (scrollArrow) {
+				scrollArrow.addEventListener('click', () => {
+					document.querySelector('footer').scrollIntoView({
+						behavior: 'smooth'
+					});
+				});
+			}
+		});
+	</script>
 
 </html>
