@@ -16,15 +16,12 @@
     </head>
 
     <body>
-        <!-- Loading Screen -->
         <div class="loading-overlay" id="loadingScreen">
             <div class="loading-spinner"></div>
         </div>
 
-        <!-- Particles Background -->
         <div id="particles"></div>
 
-        <!-- Seta indicativa -->
         <div class="scroll-arrow" id="scrollArrow"></div>
 
 		<div id="centro">
@@ -82,14 +79,12 @@
 	</footer>
 
 	<script>
-		// Loading Screen
 		window.addEventListener('load', function() {
 			setTimeout(() => {
 				document.getElementById('loadingScreen').style.display = 'none';
 			}, 3000);
 		});
 
-		// Particles Animation
 		function createParticles() {
 			const particlesContainer = document.getElementById('particles');
 			const particleCount = 50;
@@ -114,7 +109,6 @@
 			}
 		}
 
-		// Smooth Scroll for anchor links
 		document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 			anchor.addEventListener('click', function (e) {
 				e.preventDefault();
@@ -124,7 +118,6 @@
 			});
 		});
 
-		// Enhanced hover effects with sound (optional)
 		document.querySelectorAll('#contatos img, #redes img').forEach(img => {
 			img.addEventListener('mouseenter', function() {
 				this.style.transform = 'scale(1.2) rotate(5deg)';
@@ -134,11 +127,9 @@
 				this.style.transform = 'scale(1) rotate(0deg)';
 			});
 		});
-
-		// Initialize particles on load
+		
 		window.addEventListener('load', createParticles);
 
-		// Intersection Observer for animations
 		const observerOptions = {
 			threshold: 0.1,
 			rootMargin: '0px 0px -50px 0px'
@@ -152,13 +143,11 @@
 			});
 		}, observerOptions);
 
-		// Observe elements for animation
 		document.addEventListener('DOMContentLoaded', () => {
 			const animatedElements = document.querySelectorAll('#esquerda, #direita, #faixa, #contatos, #redes, footer #apresentacao, button');
 			animatedElements.forEach(el => observer.observe(el));
 		});
 
-		// Dynamic typing effect enhancement
 		function typeWriter(element, text, speed = 100) {
 			let i = 0;
 			element.innerHTML = '';
@@ -172,7 +161,6 @@
 			type();
 		}
 
-		// Enhanced glowing effect on scroll
 		window.addEventListener('scroll', () => {
 			const scrolled = window.pageYOffset;
 			const foto = document.querySelector('#direita img');
@@ -183,7 +171,6 @@
 				foto.style.boxShadow = `0 0 ${20 + glowIntensity * 20}px ${5 + glowIntensity * 10}px rgba(9, 119, 46, ${0.6 + glowIntensity * 0.4})`;
 			}
 			
-			// Esconder seta quando rolar para baixo
 			if (scrollArrow) {
 				if (scrolled > 100) {
 					scrollArrow.classList.add('hidden');
@@ -193,7 +180,6 @@
 			}
 		});
 
-		// Funcionalidade da seta - rolar para o footer
 		document.addEventListener('DOMContentLoaded', () => {
 			const scrollArrow = document.getElementById('scrollArrow');
 			if (scrollArrow) {
@@ -207,3 +193,4 @@
 	</script>
 
 </html>
+
